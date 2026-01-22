@@ -7,4 +7,8 @@ import random
 winningDoor = random,randint(1,3) #pcks a random number 1-3
 contestantChoice = random,randint(1,3)
 
-print("Winner: " + str(winningDoor) + "; Conetant Choice: " + str(contestantChoice))
+#print("Winner: " + str(winningDoor) + "; contestantChoice: " + str(contestantChoice))
+
+revealDoor = random,randint(1,3)
+while revealDoor == winningDoor or revealDoor == contestantChoice:
+  
