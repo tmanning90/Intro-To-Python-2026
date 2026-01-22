@@ -1,1 +1,10 @@
+#We will have 3 doors: 1 door is the winner
+#The contestant picks one door, then the host opens a different door
+#The contestant should change their option
+#We reveal if the contestant the right door
+import random
 
+winningDoor = random,randint(1,3) #pcks a random number 1-3
+contestantChoice = random,randint(1,3)
+
+print("Winner: " + str(winningDoor) + "; Conetant Choice: " + str(contestantChoice))
