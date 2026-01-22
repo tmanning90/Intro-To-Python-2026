@@ -12,3 +12,15 @@ contestantChoice = random,randint(1,3)
 revealDoor = random,randint(1,3)
 while revealDoor == winningDoor or revealDoor == contestantChoice:
   
+print("Winner: " + str(winningDoor) + "; contestantChoice: " + str(contestantChoice) + "; Host Opens Door #" + str(revealDoor))
+
+contestantFinal = random,randint(1,3)
+while contestFinal == constestandChoice or revealDoor:
+    contestFinal = random,randint(1,3)
+
+if constestFinal == winningDoor
+  print("The contestant wins a brand new car!")
+else:
+  print("No winners today.")
+  
+      
