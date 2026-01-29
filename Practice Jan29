@@ -1,0 +1,24 @@
+numberList = [10, 3, 5, 11, 15, 11, 13, 3, 7, 1, 5, 7, 14, 4, 9, 10, 11, 11, 8, 12, 1, 12, 1, 2]
+def greaterThanZero(numberList):
+    allPositive = True
+    for i in range(len(numberList)):
+        if numberList[i] < 0:
+            allPositive = False
+    return allPositive
+
+
+# Linear Search Algorithm
+# target = int(input("What item to search for?>>"))
+# found = False
+# for i in range(len(numberList)):
+#    if not found:
+#        if numberList[i] == target:
+#            print("Found at index {}".format(i))
+#            found = True
+
+
+
+
+
+
+    
