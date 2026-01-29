@@ -8,3 +8,4 @@ items.append(item)
 
 for item in items:
     print(item)
+
