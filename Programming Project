@@ -2,7 +2,7 @@
 import os, time
 
 # this function prints text delayed like older video games
-def slowText(text, delay=0.01):
+def slowText(text, delay=0.06):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -24,7 +24,7 @@ def bedroom():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the living room. There are doors to the kitchen, bedroom, and garden. You can also look for items.")
+    slowText("You are in your bedroom. ")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "kitchen":
@@ -101,11 +101,11 @@ def garden():
         time.sleep(3)
         garden()
 
-def bedroom():
+def bedroomCloset():
     global backpack
     os.system('cls' if os.name == 'nt' else 'clear')
     print("backpack: {}".format(backpack))
-    slowText("You are in the bedroom. You can go to the bedroom closet, coat closet, dresser, or shoe rack.")
+    slowText("You are at the bedroom closet.  You can go to the coat closet, dresser, or shoe rack.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "living room":
