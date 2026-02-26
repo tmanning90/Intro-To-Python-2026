@@ -18,7 +18,7 @@ def start():
     # Further game logic would go here
     bedroom()
 
-# continuation of the start, allows for the player to go to the living room
+# continuation of the start, allows for the player to go anywhere
 def bedroom():
     global selections
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -53,7 +53,7 @@ def coatCloset():
         bedroomCloset()
     elif choice == "dresser":  
         dresser() 
-    elif choice == "shoe race":  
+    elif choice == "shoe rack":  
         shoeRack()
     elif choice == "look for items":
         if searchSelections(selections, "paper clip"):
@@ -79,8 +79,12 @@ def dresser():
     slowText("or you can go to the bedroom closet, coat closet, or shoe rack.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
-    if choice == "living room":
-        livingRoom()
+    if choice == "bedroom closet":
+        bedroomCloset()
+    elif choice == "coat closet":
+        coatCloset()
+    elif choice == "shoe rack":
+        shoeRack()
     elif choice == "look for items":
         if searchSelections(selections, "boots"):
             slowText("You decided to scan the room. And you found nothing.")
@@ -115,6 +119,18 @@ def bedroomCloset():
             choice = input().strip().lower()
             if choice == "yes":
                 selections.append("pants")
+                print(selections) # this line is only for testing
+        time.sleep(2)
+        bedroomCloset()   
+
+    elif choice == "shirt":
+        if searchSelections(selections, "shirt"):
+            slowText("You already selected your shirt.")
+        else:
+            slowText("You decided to scan the closet. You found a cool shirt. Do you want to select it?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                selections.append("shirt")
                 print(selections) # this line is only for testing
         time.sleep(2)
         bedroomCloset()   
