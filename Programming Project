@@ -45,13 +45,16 @@ def coatCloset():
     global selections
     os.system('cls' if os.name == 'nt' else 'clear')
     print("selections: {}".format(selections))
-    slowText("You are at the coat closet. You look at shoes and outer layers.")
+    slowText("You are at the coat closet. You can select a coat, hat, or gloves")
+    slowText("or you can go to the bedroom closet, dresser, or shoe rack.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
-    if choice == "bedroom":
-        bedroom()
-    elif choice == "open window":  
-        openWindow() 
+    if choice == "bedroom closet":
+        bedroomCloset()
+    elif choice == "dresser":  
+        dresser() 
+    elif choice == "shoe race":  
+        shoeRack()
     elif choice == "look for items":
         if searchSelections(selections, "paper clip"):
             slowText("You decided to scan the room. And you found nothing.")
@@ -62,11 +65,11 @@ def coatCloset():
                 selections.append("paper clip")
                 print(selections) # this line is only for testing
         time.sleep(2)
-        kitchen()    
+        coatCloset()    
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
-        kitchen()
+        coatCloset()
 
 def dresser():
     global selections
@@ -88,11 +91,11 @@ def dresser():
                 selections.append("boots")
                 print(selections) # this line is only for testing
         time.sleep(2)
-        garden()   
+        dresser()   
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
-        garden()
+        dresser()
 
 def bedroomCloset():
     global selections
@@ -112,6 +115,36 @@ def bedroomCloset():
             choice = input().strip().lower()
             if choice == "yes":
                 selections.append("pants")
+                print(selections) # this line is only for testing
+        time.sleep(2)
+        bedroomCloset()   
+    else:
+        print("Invalid choice. Please try again.")
+        time.sleep(3)
+        bedroomCloset()
+
+def shoeRack():
+    global selections
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("selections: {}".format(selections))
+    slowText("You are at the shoe rack. You can select sneakers or boots")
+    slowText("or you can go to the bedroom closet, coat closet or dresser.")
+    slowText("What would you like to do?")
+    choice = input().strip().lower()
+    if choice == "bedroom closet":
+        bedroomCloset()
+    if choice == "coat closet":
+        coatCloset()
+    if choice == "dresser":
+        dresser()
+    elif choice == "pants":
+        if searchSelections(selections, "pants"):
+            slowText("You already selected your pants.")
+        else:
+            slowText("You decided to scan the shoe rack. You found some cool boots. Do you want to select them?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                selections.append("boots")
                 print(selections) # this line is only for testing
         time.sleep(2)
         bedroom()   
@@ -142,11 +175,11 @@ def openDoor():
         else:
             slowText("You can't walk through the mud right now.")
             time.sleep(3)
-            kitchen()
+            coatCloset()
     else:
         slowText("Unfortunately, you are too cold to go outside.")
         time.sleep(3)
-        kitchen() 
+        coatCloset() 
 
 playerName = ""
 selections = []
