@@ -239,6 +239,7 @@ def searchSelections(pack, item):
 
 def leave():
     slowText("You open the door to leave and realize it's really cold outside.")
+   
     if searchSelections(selections, "boots") == True:
         slowText("Luckily you have boots on.")
         if searchSelections(selections, "hat") == True:
