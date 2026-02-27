@@ -110,17 +110,31 @@ def dresser():
         coatCloset()
     elif choice == "shoe rack":
         shoeRack()
-    elif choice == "look for items":
-        if searchSelections(selections, "boots"):
-            slowText("You decided to scan the room. And you found nothing.")
+
+    elif choice == "socks":
+        if searchSelections(selections, "socks"):
+            slowText("You already selected your socks.")
         else:
-            slowText("You decided to scan the room. You see boots. Do you want to pick them up?")
+            slowText("You see some snazzy socks. Do you want to select them?")
             choice = input().strip().lower()
             if choice == "yes":
-                selections.append("boots")
+                selections.append("socks")
                 print(selections) # this line is only for testing
         time.sleep(2)
         dresser()   
+
+    elif choice == "underwear":
+        if searchSelections(selections, "underwear"):
+            slowText("You already selected your underwear.")
+        else:
+            slowText("You need underwear. You see underwear. Do you want to select them?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                selections.append("underwear")
+                print(selections) # this line is only for testing
+        time.sleep(2)
+        dresser()  
+
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
@@ -183,17 +197,30 @@ def shoeRack():
         coatCloset()
     if choice == "dresser":
         dresser()
-    elif choice == "pants":
-        if searchSelections(selections, "pants"):
-            slowText("You already selected your pants.")
+
+    elif choice == "boots":
+        if searchSelections(selections, "boots"):
+            slowText("You already selected your socks.")
         else:
-            slowText("You decided to scan the shoe rack. You found some cool boots. Do you want to select them?")
+            slowText("You see boots. Do you want to select them?")
             choice = input().strip().lower()
             if choice == "yes":
                 selections.append("boots")
                 print(selections) # this line is only for testing
         time.sleep(2)
-        bedroom()   
+        shoeRack()   
+
+    elif choice == "sneakers":
+        if searchSelections(selections, "sneakers"):
+            slowText("You already selected your sneakers.")
+        else:
+            slowText("You need shoes. You see sneakers. Do you want to select them?")
+            choice = input().strip().lower()
+            if choice == "yes":
+                selections.append("sneakers")
+                print(selections) # this line is only for testing
+        time.sleep(2)
+        shoeRack()   
     else:
         print("Invalid choice. Please try again.")
         time.sleep(3)
