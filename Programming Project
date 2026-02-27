@@ -71,7 +71,7 @@ def coatCloset():
         if searchSelections(selections, "gloves"):
             slowText("You already selected your gloves.")
         else:
-            slowText("You also see gloves. Do you want to select them?")
+            slowText("You see gloves. Do you want to select them?")
             choice = input().strip().lower()
             if choice == "yes":
                 selections.append("gloves")
