@@ -47,6 +47,7 @@ def coatCloset():
     print("selections: {}".format(selections))
     slowText("You are at the coat closet. You can select a coat, hat, or gloves")
     slowText("or you can go to the bedroom closet, dresser, or shoe rack.")
+    slowText("You may also leave the house.")
     slowText("What would you like to do?")
     choice = input().strip().lower()
     if choice == "bedroom closet":
@@ -55,6 +56,8 @@ def coatCloset():
         dresser() 
     elif choice == "shoe rack":  
         shoeRack()
+    elif choice == "leave the house":
+        leave()
 
     elif choice == "coat":
         if searchSelections(selections, "coat"):
@@ -234,24 +237,27 @@ def searchSelections(pack, item):
             found = True
     return found
 
-def openDoor():
-    slowText("You decided to try to open the door")
-    if searchSelections(selections, "computer science book") == True:
-        slowText("You used the computer science book to keep the window open. Now it is open.")
-        slowText("You see a huge mud pit in the yard outside.")
-        if searchSelections(selections, "boots") == True:
-            slowText("You put on your puts to safely walk through the mud.")
-            if searchSelections(selections, "oreos") == True:
-                slowText("You even have Oreos as a snack")
+def leave():
+    slowText("You open the door to leave and realize it's really cold outside.")
+    if searchSelections(selections, "boots") == True:
+        slowText("Luckily you have boots on.")
+        if searchSelections(selections, "hat") == True:
+            slowText("Luckly, you have gloves.")
+            if searchSelections(selections, "hat") == True:
+                slowText("You even have a hat.")
             else:  
-                slowText("Bummer you don't have any Oreos to eat.")
+                slowText("Bummer you don't have a hat.")
+                if searchSelections(selections, "coat") == True:
+                    slowText("Fortunately, you have a coat.")
+                else:
+                    slowText("Oh boy, you need a coat.")
         else:
-            slowText("You can't walk through the mud right now.")
+            slowText("You are not dressed ready to leave.")
             time.sleep(3)
             coatCloset()
     else:
-        slowText("Unfortunately, you are too cold to go outside.")
-        time.sleep(3)
+        slowText("Unfortunately, you are not dressed ready to leave right now.")
+        time.sleep(1.5)
         coatCloset() 
 
 playerName = ""
