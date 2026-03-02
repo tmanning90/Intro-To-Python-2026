@@ -242,19 +242,20 @@ def leave():
    
     if searchSelections(selections, "boots") == True:
         slowText("Luckily you have boots on.")
-        if searchSelections(selections, "hat") == True:
-            slowText("Luckly, you have gloves.")
+        if searchSelections(selections, "gloves") == True:
+            slowText("Luckily, you have gloves.")
             if searchSelections(selections, "hat") == True:
                 slowText("You even have a hat.")
-            else:  
-                slowText("Bummer you don't have a hat.")
                 if searchSelections(selections, "coat") == True:
                     slowText("Fortunately, you have a coat.")
                 else:
                     slowText("Oh boy, you need a coat.")
+            else:  
+                slowText("Bummer you don't have a hat.")
+                
         else:
-            slowText("You are not dressed ready to leave.")
-            time.sleep(3)
+            slowText("Your hands will be cold. You are not ready to leave.")
+            time.sleep(2)
             coatCloset()
     else:
         slowText("Unfortunately, you are not dressed ready to leave right now.")
