@@ -237,7 +237,7 @@ def searchSelections(pack, item):
             found = True
     return found
 
-def leave():
+def leave(): #I need to get out of the house here.
     slowText("You open the door to leave and realize it's really cold outside.")
    
     if searchSelections(selections, "boots") == True:
