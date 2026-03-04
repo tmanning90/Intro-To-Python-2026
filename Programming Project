@@ -248,11 +248,15 @@ def leave(): #I need to get out of the house here.
                 slowText("You even have a hat.")
                 if searchSelections(selections, "coat") == True:
                     slowText("Fortunately, you have a coat.")
+                    slowText("You are dressed and ready to go to school.")
                 else:
                     slowText("Oh boy, you need a coat.")
+                    time.sleep(1.5)
+                    coatCloset() 
             else:  
                 slowText("Bummer you don't have a hat.")
-                
+                time.sleep(1.5)
+                coatCloset() 
         else:
             slowText("Your hands will be cold. You are not ready to leave.")
             time.sleep(2)
